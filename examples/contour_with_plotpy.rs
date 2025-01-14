@@ -1,10 +1,12 @@
 use plotpy::{generate3d, Contour, Plot};
 
+use optimize_examples::test_math_funcs::rosenbrock;
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // generate (x,y,z) matrices
     let n = 51;
     let (x, y, z) = generate3d(-2.0, 3.0, -2.0, 3.0, n, n, |x, y| {
-        (1.0 - x).powi(2) + 5.0 * (y - x.powi(2)).powi(2)
+        rosenbrock(&[x, y], 1., 5.)
     });
 
     // configure contour
