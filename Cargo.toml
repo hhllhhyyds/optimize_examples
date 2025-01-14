@@ -17,3 +17,4 @@ features = [
 plotpy = "1.10"
 rand = "0.8"
 approx = "0.5"
+glam = "0.29"
